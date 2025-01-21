@@ -1,0 +1,175 @@
+@font-face {
+    font-family:Inter;
+    src:local[Inter],
+    url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf),
+    url(./assets/fonts/static/Inter-Bold.ttf),
+    url(./assets/fonts/static/Inter-Regular.ttf),
+    url(./assets/fonts/static/Inter-SemiBold.ttf);
+}
+:root {
+    --font-fam: Inter;
+    --clr-prim: hsl(75, 94%, 57%);
+    --clr-sec: hsl(0, 0%, 100%);
+    --Grey-700: hsl(0, 0%, 20%);
+    --Grey-800: hsl(0, 0%, 12%);
+    --Grey-900: hsl(0, 0%, 8%);
+    --clr-third: ;
+    --clr-font-1: ;
+    --clr-font-2: ;
+    --wg-font-med: 400;
+    --wg-font-med: 600;
+    --wg-font-xl: 700;
+    --size-font-s: 0.8rem;
+    --size-font-m: 1rem;
+    --size-font-l: .8rem;
+    --size-font-xl: 1.5rem;
+    --margin: clamp(1.5rem, 5vw, 2rem);
+    --padding-x: 0 clamp(1.4rem ,7vw, 2.5rem);
+    --padding-y: clamp(2rem ,5vw, 2rem) 0;
+    --border-radius-m: 7px;
+    --border-radius-l: 13px;
+    --line-height: 1.7;
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-fam);
+    background-color: var(--Grey-900);
+    color: var(--clr-sec);
+    line-height: var(--line-height);
+}
+body {
+    display: flex;
+    height: 100dvh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container {
+    background-color: var(--Grey-800);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: max-content;
+    min-width: 17rem;
+    margin: var(--margin);
+    padding: var(--padding-x);
+    padding: var(--padding-y);
+    border-radius: var(--border-radius-l);
+}
+.personal-container{
+    display: flex;
+    flex-direction: column;
+}
+.profile-container > div img {
+    border-radius: 50%;
+    width: clamp(100px, 25vw, 100px);
+    margin-bottom: 1.2rem;
+    align-self: center;
+
+}
+
+.profile-container > div > h2 {
+    background-color: var(--Grey-800);
+    padding: var(--padding-x);
+    font-size: var(--size-font-xl);
+    font-weight: var(--wg-font-med);
+    align-self: center;
+}
+
+.profile-container > div h4 {
+    background-color: var(--Grey-800);
+    padding: var(--padding-x);
+    color: var(--clr-prim);
+    font-size: var(--size-font-l);
+    align-self: center;
+}
+
+.profile-container > div p {
+    background-color: var(--Grey-800);
+    padding: var(--padding-x);
+    font-size: var(--size-font-s);
+    margin:  1.5rem 0;
+    color: rgba(255, 255, 255, 0.932);
+    align-self: center;
+}
+
+.profile-container > div {
+    background-color: var(--Grey-800);
+    width: clamp(100px, 25vw, 150px);
+    width: 100%;
+    padding: var(--padding-x);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+.profile-container > div > a {
+    background-color: var(--Grey-700);
+    text-decoration: none;
+    color: var(--clr-sec);
+    display: block;
+    text-align: center;
+    height: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-m);
+    font-weight: var(--wg-font-med);
+    font-size: var(--size-font-s);
+    cursor: pointer;
+
+}
+
+.profile-container > div > a:hover {
+    background-color: var(--clr-prim);
+    color: var(--Grey-900);
+    transition: .3s ease-in-out;
+}
+.profile-container > div > a:active {
+    background-color: hsla(75, 94%, 57%, 0.697);
+}
+
+img:hover {
+    box-shadow: 0 0 2px 2px var(--clr-prim );
+    transform: scale(1.1);
+    transition: .5s ease;
+}
+
+@media screen and (width > 375px ) {
+   
+    .profile-container{
+        max-width: 30rem;
+        min-width: 20rem;
+        width: 25rem;
+    }
+    
+}
+@media only screen and (orientation: landscape) {
+    .profile-container{
+        max-height: 95dvh;
+        max-width: 95vw;
+        min-width:  45rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        margin: clamp(1rem, 2vw, 2rem);
+    }
+
+    .personal-container {
+        grid-column: 1 / 2;
+    }
+    .sosial-links{
+        grid-column:  2 /3;
+    }
+}
+
